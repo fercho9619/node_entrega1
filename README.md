@@ -20,7 +20,7 @@ Requisitos
 
 1. Clonar el repositorio:
 ```bash
-git clone <url-del-repositorio>
+git clone https://github.com/fercho9619/node_entrega1
 cd proyecto-ecommerce
 
 2. npm install
