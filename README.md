@@ -4,16 +4,16 @@ API RESTful para gestión de productos y carritos de compra, desarrollada con No
 
 Características
 
-- ✅ Gestión completa de productos (CRUD)
-- ✅ Sistema de carritos de compra
-- ✅ Persistencia en archivos JSON
-- ✅ IDs autoincrementables únicos
-- ✅ Validación de datos integrada
-- ✅ Manejo de errores robusto
+- Gestión completa de productos (CRUD)
+- Sistema de carritos de compra
+- IDs autoincrementables únicos
+
+Postman collection
+- Ya viene incluida una colleccion de postman para poder usar la API
 
 Requisitos
 
-- Node.js 16+ 
+- Node.js 22+ 
 - npm o yarn
 
  Instalación
