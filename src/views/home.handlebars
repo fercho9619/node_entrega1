@@ -1,0 +1,31 @@
+<h1 class="mb-4">Lista de Productos</h1>
+
+{{#if error}}
+    <div class="alert alert-danger">{{error}}</div>
+{{/if}}
+
+<div class="row">
+    {{#each products}}
+    <div class="col-md-4 mb-4">
+        <div class="card product-card h-100">
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text">{{this.description}}</p>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><strong>Precio:</strong> ${{this.price}}</li>
+                    <li class="list-group-item"><strong>Stock:</strong> {{this.stock}}</li>
+                    <li class="list-group-item"><strong>Categoría:</strong> {{this.category}}</li>
+                    <li class="list-group-item"><strong>Código:</strong> {{this.code}}</li>
+                </ul>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">ID: {{this.id}}</small>
+            </div>
+        </div>
+    </div>
+    {{else}}
+    <div class="col-12">
+        <div class="alert alert-info">No hay productos disponibles</div>
+    </div>
+    {{/each}}
+</div>

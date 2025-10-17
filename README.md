@@ -1,4 +1,4 @@
-API Ecommerce - Primera Entrega
+API Ecommerce - Entrega 2
 
 API RESTful para gestión de productos y carritos de compra, desarrollada con Node.js y Express.
 

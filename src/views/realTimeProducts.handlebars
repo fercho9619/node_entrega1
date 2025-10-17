@@ -1,0 +1,71 @@
+<h1 class="mb-4">Agregar Productos</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <div class="card-header">
+                <h5>Agregar Producto</h5>
+            </div>
+            <div class="card-body">
+                <form id="productForm">
+                    <div class="mb-3">
+                        <label class="form-label">Título</label>
+                        <input type="text" class="form-control" name="title" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Descripción</label>
+                        <textarea class="form-control" name="description" required></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Precio</label>
+                        <input type="number" class="form-control" name="price" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Código</label>
+                        <input type="text" class="form-control" name="code" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Stock</label>
+                        <input type="number" class="form-control" name="stock" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Categoría</label>
+                        <input type="text" class="form-control" name="category" required>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">Agregar Producto</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-8">
+        <div id="productsList" class="row">
+            {{#each products}}
+            <div class="col-md-6 mb-3">
+                <div class="card product-card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.title}}</h5>
+                        <p class="card-text text-muted small">{{this.description}}</p>
+                        <div class="d-flex justify-content-between">
+                            <span class="badge bg-primary">${{this.price}}</span>
+                            <span class="badge bg-secondary">Stock: {{this.stock}}</span>
+                        </div>
+                        <button class="btn btn-danger btn-sm mt-2 w-100 delete-btn" data-id="{{this.id}}">
+                            Eliminar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {{else}}
+            <div class="col-12">
+                <div class="alert alert-info">No hay productos disponibles</div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+
+<div id="alertContainer"></div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realTimeProducts.js"></script>
